@@ -15,9 +15,20 @@ const node9 = tree.addToRightOf(node8, 6);
 const node10 = tree.addToRightOf(node9, "+");
 const node11 = tree.addToRightOf(node10, 7);
 
-const inOrderIterator = tree.createIterator('in-order');
-
+const inOrderIterator = tree.createIterator('post-order');
 inOrderIterator.startIteration();
 const inOrderResult = inOrderIterator.getIterationResult();
-
 console.log(inOrderResult);
+
+
+const tree2 = new Tree("+");
+const nnode0 = tree.addToLeftOf(tree2.root, 2);
+const nnode1 = tree.addToLeftOf(nnode0, "-");
+const nnode2 = tree.addToRightOf(nnode0, "**");
+
+const nnode3 = tree.addToLeftOf(tree2.root, 5);
+
+const postOrderIterator = tree2.createIterator('post-order');
+postOrderIterator.startIteration();
+const postOrderResult = postOrderIterator.getIterationResult();
+console.log(postOrderResult);
