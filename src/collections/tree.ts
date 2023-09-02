@@ -3,6 +3,8 @@ import { Iterator } from "../iterators/iterator";
 import { Node } from "./node";
 import { InOrderIterator } from "../iterators/in-order.iterator";
 import { PostOrderIterator } from "../iterators/post-order.iterator";
+import { DfsPreOrder } from "../iterators/dfs-pre-order.iterator";
+import { DfsPostOrder } from "../iterators/dfs-post-order.iterator";
 
 export type NodeType = number | string;
 
@@ -31,12 +33,20 @@ export class Tree implements IterableTree<NodeType> {
     return this.#addToSide(rootNode, value, "right");
   }
 
-  createIterator(type: "in-order" | "pre-order" | "post-order" | "level-order"): Iterator<NodeType> {
+  createIterator(
+    type: 
+    'in-order' 
+    | 'pre-order' 
+    | 'post-order' 
+    | 'dfs-pre-order' 
+    | 'dfs-post-order'
+  ): Iterator<NodeType> {
     const iterators = {
       "pre-order": new InOrderIterator(this),
       "in-order": new InOrderIterator(this),
       "post-order": new PostOrderIterator(this),
-      "level-order": new InOrderIterator(this)
+      'dfs-pre-order': new DfsPreOrder(this),
+      'dfs-post-order': new DfsPostOrder(this),
     }
 
     return iterators[type];
