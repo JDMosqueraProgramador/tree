@@ -15,9 +15,10 @@ const node9 = tree.addToRightOf(node8, 6);
 const node10 = tree.addToRightOf(node9, "+");
 const node11 = tree.addToRightOf(node10, 7);
 
-const inOrderIterator = tree.createIterator('post-order');
+const inOrderIterator = tree.createIterator("in-order");
 inOrderIterator.startIteration();
 const inOrderResult = inOrderIterator.getIterationResult();
+console.log("Resultado In-Orden")
 console.log(inOrderResult);
 
 
@@ -31,4 +32,24 @@ const nnode3 = tree.addToLeftOf(tree2.root, 5);
 const postOrderIterator = tree2.createIterator('post-order');
 postOrderIterator.startIteration();
 const postOrderResult = postOrderIterator.getIterationResult();
+console.log("Resultado Post-Orden");
 console.log(postOrderResult);
+
+
+const tree3 = new Tree(10);
+const nnnode0 = tree3.addToLeftOf(tree3.root, 5);
+const nnnode1 = tree3.addToLeftOf(nnnode0, 3);
+const nnnode2 = tree3.addToRightOf(nnnode0, 7);
+
+
+const nnnode6 = tree3.addToRightOf(tree3.root, 15);
+
+
+
+
+
+const dfsPreOrderIterator = tree3.createIterator("dfs-pre-order");
+dfsPreOrderIterator.startIteration();
+const dfsPreOrderResult = dfsPreOrderIterator.getIterationResult()
+console.log("Resultado Pre-Orden Primero en profundidad");
+console.log(dfsPreOrderResult);
