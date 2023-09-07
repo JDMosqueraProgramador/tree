@@ -5,14 +5,14 @@ import executePostOrderExample from "./examples/PostOrder";
 import executePreOrderExample from "./examples/PreOrder";
 
 
-const main = ()=>{
-  executePreOrderExample()
-  executeInOrderExample()
-  executePostOrderExample()
-  executeDfsPreOrderExample()
-  executeDfsPostOrderExample()
+const main = () => {
+  executePreOrderExample();
+  executeInOrderExample();
+  executePostOrderExample();
+  executeDfsPreOrderExample();
+  executeDfsPostOrderExample();
 }
 
-main()
+main();
 
 
